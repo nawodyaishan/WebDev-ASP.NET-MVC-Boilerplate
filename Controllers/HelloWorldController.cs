@@ -11,7 +11,10 @@ public class HelloWorldController : Controller
         DogViewModel doggo = new DogViewModel() {Name = "Cheetah", Age = 2};
         return View(doggo);
     }
-
+    public IActionResult Create()
+    {
+        return View();
+    }
     public string Hello()
     {
         return "who is there";
