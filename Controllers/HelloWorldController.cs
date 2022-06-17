@@ -13,8 +13,15 @@ public class HelloWorldController : Controller
     }
     public IActionResult Create()
     {
-        return View();
+        var dogVm = new DogViewModel();
+        return View(dogVm);
     }
+
+    public IActionResult CreateDog(DogViewModel dogViewModel)
+    {
+        return View("Index");
+    }
+    
     public string Hello()
     {
         return "who is there";
