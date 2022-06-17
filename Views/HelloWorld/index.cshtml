@@ -5,15 +5,23 @@
     Layout = "_Layout";
 }
 
-<title>Hello World</title>
-<h1> Hello World</h1>
+<title>Dogs List</title>
+<div>
 
-<ul>
-@foreach (var dog in Model)
-{
-    <li>
-        @dog.Name (@dog.Age)
-    </li>
-}
+    <div class="card-header">
+        <h2> Here is your dog name list with ages</h2>
+<p>If you havent created a dog yet.. Please go to create a dog page</p>
+    </div>
+    <div class="card-body">
 
-</ul>
+        <ul>
+            @foreach (var dog in Model)
+            {
+                <li>
+                    @dog.Name (@dog.Age)
+                </li>
+            }
+
+        </ul>
+    </div>
+</div>
