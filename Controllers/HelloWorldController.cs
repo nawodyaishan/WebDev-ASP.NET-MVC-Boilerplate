@@ -7,12 +7,12 @@ public class HelloWorldController : Controller
 {
     // GET
 
-    private List<DogViewModel> dogs = new List<DogViewModel>(); 
+    private static List<DogViewModel> dogs = new List<DogViewModel>(); 
     public IActionResult Index()
     {
         return View(dogs);
     }
-    public IActionResult Create()
+    public IActionResult Create() 
     {
         var dogVm = new DogViewModel();
         return View(dogVm);
@@ -21,7 +21,7 @@ public class HelloWorldController : Controller
     public IActionResult CreateDog(DogViewModel dogViewModel)
     {
         // return View("Index");
-
+        dogs.Add(dogViewModel);
         return RedirectToAction(nameof(Index));
     }
     
