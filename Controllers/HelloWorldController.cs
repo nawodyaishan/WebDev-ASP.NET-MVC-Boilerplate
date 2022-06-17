@@ -6,10 +6,11 @@ namespace FirstMVCApp.Controllers;
 public class HelloWorldController : Controller
 {
     // GET
+
+    private List<DogViewModel> dogs = new List<DogViewModel>(); 
     public IActionResult Index()
     {
-        DogViewModel doggo = new DogViewModel() {Name = "Cheetah", Age = 2};
-        return View(doggo);
+        return View(dogs);
     }
     public IActionResult Create()
     {
@@ -19,7 +20,9 @@ public class HelloWorldController : Controller
 
     public IActionResult CreateDog(DogViewModel dogViewModel)
     {
-        return View("Index");
+        // return View("Index");
+
+        return RedirectToAction(nameof(Index));
     }
     
     public string Hello()
